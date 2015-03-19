@@ -8,11 +8,11 @@ Clone Thrift's repo, put WebServer.hs next to Server.hs, replace their Thrift.ca
 
 Use warp's run like so:
 
-  import Thrift.WebServer
-  import Network.Wai.Handler.Warp
-  import Network.Wai.Middleware.Cors
-  import YourHandler
-  
-  main = do
-    let app = basicWebServerApp YourHandler YourHandler.process
-    run 9090 $ simpleCors app
+    import Thrift.WebServer
+    import Network.Wai.Handler.Warp
+    import Network.Wai.Middleware.Cors
+    import YourHandler
+      
+    main = do
+      let app = basicWebServerApp YourHandler YourHandler.process
+      run 9090 $ simpleCors app
