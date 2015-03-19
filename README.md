@@ -18,6 +18,7 @@ Use warp's run like so:
       run 9090 $ simpleCors app
 
 And a JS client:
+
     var transport = new Thrift.Transport("http://localhost:9090/",{useCORS:true}),
         protocol = new Thrift.TJSONProtocol(transport);
     
