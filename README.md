@@ -1,6 +1,6 @@
 # ThriftWarp
 
-This is adds to the Haskell Thrift library - works with xhr posts, I haven't finished websockets and some other stuff yet so it's still separate.
+This is adds to the Haskell Thrift library - works with xhr posts, I haven't finished websockets and some other stuff yet so it's still separate (I branched from 0.9.2).
 
 # Use
 
