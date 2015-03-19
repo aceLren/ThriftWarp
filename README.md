@@ -11,8 +11,15 @@ Use warp's run like so:
     import Thrift.WebServer
     import Network.Wai.Handler.Warp
     import Network.Wai.Middleware.Cors
-    import YourHandler
+    import YourService
       
     main = do
-      let app = basicWebServerApp YourHandler YourHandler.process
+      let app = basicWebServerApp YourHandler YourService.process
       run 9090 $ simpleCors app
+
+And a JS client:
+    var transport = new Thrift.Transport("http://localhost:9090/",{useCORS:true}),
+        protocol = new Thrift.TJSONProtocol(transport);
+    
+    var client = new YourServiceClient(protocol);
+    client.yourFunction();
