@@ -32,12 +32,17 @@ newWSTrans conn = do
     return $ WSTrans conn rbuf wbuf
 
 readUntil :: WS.Connection -> Int -> BL.ByteString -> IO BL.ByteString
-readUntil conn n s = do
-    msg <- WS.receiveDataMessage conn
-    let ns = s <> toByteString msg
-    if BL.length ns < fromIntegral n
-        then readUntil conn n ns
-        else return ns
+readUntil conn n s
+    | sz > 1 && nsz < sz = return s
+    | otherwise          = do
+        msg <- WS.receiveDataMessage conn
+        let ns = s <> toByteString msg
+        if BL.length ns < fromIntegral n
+            then readUntil conn n ns
+            else return ns
+    where
+        sz = BL.length s
+        nsz = fromIntegral n
 
 instance Transport WSTrans where
     tIsOpen t = do
