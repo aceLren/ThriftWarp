@@ -1,6 +1,6 @@
 # ThriftWarp
 
-This is adds to the Haskell Thrift library - works with xhr posts, websockets and can also serve static files (I branched from 0.9.2).
+This is adds to the Haskell Thrift library - works with xhr posts, websockets and can also serve static files (I branched from 0.9.2).  Since creating this I decided to just fork the repo and put it all in the right place, so if you clone my fork and build it this should all work as well.  The fork is [here](https://github.com/aceLren/thrift).
 
 # Use
 
